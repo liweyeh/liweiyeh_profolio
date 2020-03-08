@@ -1,0 +1,93 @@
+//Dependencies
+import React, { Fragment, useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+import ReactCountryFlag from 'react-country-flag';
+
+//Assets
+import mugshot from '../../assets/mugshot.jpeg';
+
+//UI
+import Text from '../common/Text';
+import Typer from '../common/Typer';
+
+const useStyles = makeStyles(theme => ({
+  'root': {
+    height: '100vh'
+  },
+  'mugshot': {
+    width: '22vw',
+    borderRadius: '400px',
+    marginBottom: theme.spacing(2),
+    boxShadow: '5px 5px 20px'
+  },
+  'animation': {
+    animationName: '$fadeIn',
+    animationDuration: '1s'
+  },
+  '@keyframes fadeIn': {
+    from: { opacity: 0 },
+    to: { opacity: 1 }
+  }
+}));
+
+const Welcome = () => {
+  const classes = useStyles();
+
+  return (
+    <Fragment>
+      <Grid
+        container
+        className={classes.root}
+        justify='space-around'
+        alignItems='center'
+      >
+        <Grid
+          xs={10}
+          sm={6}
+          item
+          container
+          direction='column'
+          alignItems='center'
+          className={classes.animation}
+        >
+          <img src={mugshot} alt='author_face' className={classes.mugshot} />
+          <Grid container direction='row' justify='center' alignItems='center'>
+            <Text
+              color='secondary'
+              variant='h5'
+              msgID='welcome.name'
+              defaultMsg='Liwei Yeh'
+            />
+            <ReactCountryFlag
+              countryCode='TW'
+              style={{
+                fontSize: '3rem',
+                marginLeft: '1rem'
+              }}
+              aria-label='Taiwan'
+            />
+          </Grid>
+
+          <Text
+            color='secondary'
+            variant='body1'
+            msgID='welcome.school'
+            defaultMsg='Class of 2019, University of Queensland, Master of IT'
+          />
+          <Text
+            color='secondary'
+            variant='body1'
+            msgID='welcome.occupation'
+            defaultMsg='Frontend developer, React Developer'
+          />
+        </Grid>
+        <Grid xs={10} sm={6} item container>
+          <Typer />
+        </Grid>
+      </Grid>
+    </Fragment>
+  );
+};
+
+export default Welcome;

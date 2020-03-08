@@ -11,17 +11,18 @@ const messages = {
   ja: messages_ja,
   en: messages_en
 };
-const language = navigator.language.split(/[-_]/)[0] === 'ja' ? 'ja' : 'en';
+// TODO swap it back ja after finishing the profolio
+const language = navigator.language.split(/[-_]/)[0] === 'ja' ? 'en' : 'en';
 
 // Sections
-const Home = React.lazy(() => import('./components/welcome.js'));
+const Welcome = React.lazy(() => import('./components/welcome/Welcome.js'));
 
 function App() {
   return (
     <IntlProvider locale={language} messages={messages[language]}>
       <ThemeProvider>
         <Suspense fallback={<CircularProgress />}>
-          <Home />
+          <Welcome />
         </Suspense>
       </ThemeProvider>
     </IntlProvider>

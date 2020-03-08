@@ -1,1 +1,6 @@
-{}
+{
+  "welcome.msg": "Welcome to Liwei's portfolio",
+  "welcome.name": "Liwei Yeh",
+  "welcome.school": "Class of 2019, University of Queensland, Master of IT",
+  "welcome.occupation": "Frontend developer, React Developer"
+}
