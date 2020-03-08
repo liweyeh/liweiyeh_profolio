@@ -9,12 +9,6 @@ const app = express();
 //Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) =>
-  res.json({
-    msg: 'Welcome to the contact keeper api'
-  })
-);
-
 //Define Routes
 // app.use('/api/users', require('./routes/users.js'));
 // app.use('/api/contacts', require('./routes/contacts.js'));
