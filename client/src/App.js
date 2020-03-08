@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Dependecies
+import React, { Suspense } from 'react';
+import ThemeProvider from './theme/ThemeProvider';
+import { CircularProgress } from '@material-ui/core';
+
+// Language Import
+import { IntlProvider } from 'react-intl';
+import messages_ja from './translations/ja.json';
+import messages_en from './translations/en.json';
+const messages = {
+  ja: messages_ja,
+  en: messages_en
+};
+const language = navigator.language.split(/[-_]/)[0] === 'ja' ? 'ja' : 'en';
+
+// Sections
+const Home = React.lazy(() => import('./components/welcome.js'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider locale={language} messages={messages[language]}>
+      <ThemeProvider>
+        <Suspense fallback={<CircularProgress />}>
+          <Home />
+        </Suspense>
+      </ThemeProvider>
+    </IntlProvider>
   );
 }
 
