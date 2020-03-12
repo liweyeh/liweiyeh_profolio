@@ -41,7 +41,11 @@ const Typer = () => {
 
   return (
     <>
-      <Typography color='secondary' variant='h3'>
+      <Typography
+        color='secondary'
+        variant='h3'
+        style={{ textAlign: 'center' }}
+      >
         {text}
         <span className={classes.cursor}></span>
       </Typography>

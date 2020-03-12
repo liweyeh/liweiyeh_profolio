@@ -1,5 +1,5 @@
 //Dependencies
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 
@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
   'mugshot': {
     width: '22vw',
+    minWidth: '250px',
     borderRadius: '400px',
     marginBottom: theme.spacing(2),
     boxShadow: '5px 5px 20px'
@@ -30,7 +31,8 @@ const useStyles = makeStyles(theme => ({
     to: { opacity: 1 }
   },
   'image': {
-    width: '5vw',
+    width: '3vw',
+    minWidth: '50px',
     marginLeft: '1rem'
   }
 }));
