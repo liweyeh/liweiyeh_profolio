@@ -2,10 +2,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import ReactCountryFlag from 'react-country-flag';
 
 //Assets
 import mugshot from '../../assets/mugshot.jpeg';
+import taiwan from '../../assets/taiwan.svg';
 
 //UI
 import Text from '../common/Text';
@@ -28,6 +28,10 @@ const useStyles = makeStyles(theme => ({
   '@keyframes fadeIn': {
     from: { opacity: 0 },
     to: { opacity: 1 }
+  },
+  'image': {
+    width: '5vw',
+    marginLeft: '1rem'
   }
 }));
 
@@ -59,14 +63,7 @@ const Welcome = () => {
               msgID='welcome.name'
               defaultMsg='Liwei Yeh'
             />
-            <ReactCountryFlag
-              countryCode='TW'
-              style={{
-                fontSize: '3rem',
-                marginLeft: '1rem'
-              }}
-              aria-label='Taiwan'
-            />
+            <img src={taiwan} className={classes.image} alt='taiwan_flag' />
           </Grid>
 
           <Text
