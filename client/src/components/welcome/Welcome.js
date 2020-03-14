@@ -67,7 +67,6 @@ const Welcome = () => {
             />
             <img src={taiwan} className={classes.image} alt='taiwan_flag' />
           </Grid>
-
           <Text
             color='secondary'
             variant='body1'

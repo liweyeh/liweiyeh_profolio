@@ -12,6 +12,9 @@ const themeInstance = createMuiTheme({
     },
     secondary: {
       main: '#fff'
+    },
+    text: {
+      primary: 'black'
     }
   }
 });
