@@ -1,7 +1,7 @@
 // Dependencies
-import React, { Fragment } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Fade } from '@material-ui/core';
 
 // UI
 import Text from '../common/Text';
@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Skills = () => {
+  // Local constants
   const classes = useStyles();
   const mainIcons = [
     { icon: htmlIcon, alt: 'HTML5' },
@@ -54,8 +55,35 @@ const Skills = () => {
     { icon: unityIcon, alt: 'Unity' },
     { icon: csharpIcon, alt: 'C#' }
   ];
+  const contentRef = useRef();
+
+  // State
+  const [pos, setPos] = useState();
+
+  // Life Cycle
+  useEffect(() => {
+    window.addEventListener('scroll', () => handleScroll(contentRef));
+  }, [contentRef, pos]);
+
+  const handleScroll = ref => {
+    if (ref.current) setPos(ref.current.getBoundingClientRect().top);
+  };
+
+  const isInView = (offset, ref) => {
+    if (ref) {
+      const top = ref.getBoundingClientRect().top;
+      const viewport =
+        window.innerHeight - ref.getBoundingClientRect().height / offset;
+      if (top <= viewport) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
   return (
-    <div>
+    <div ref={contentRef}>
       <Grid
         className={classes.gridContainer}
         container
@@ -72,9 +100,11 @@ const Skills = () => {
           />
         </Grid>
         <Grid item sm={10} className={classes.icons}>
-          {mainIcons.map(icon => {
+          {mainIcons.map((icon, key) => {
             return (
-              <img src={icon.icon} alt={icon.alt} className={classes.icon} />
+              <Fade in={isInView(2.5, contentRef.current)} timeout={key * 300}>
+                <img src={icon.icon} alt={icon.alt} className={classes.icon} />
+              </Fade>
             );
           })}
         </Grid>
@@ -87,9 +117,11 @@ const Skills = () => {
           />
         </Grid>
         <Grid item sm={10} className={classes.icons}>
-          {secondIcons.map(icon => {
+          {secondIcons.map((icon, key) => {
             return (
-              <img src={icon.icon} alt={icon.alt} className={classes.icon} />
+              <Fade in={isInView(1.1, contentRef.current)} timeout={key * 300}>
+                <img src={icon.icon} alt={icon.alt} className={classes.icon} />
+              </Fade>
             );
           })}
         </Grid>

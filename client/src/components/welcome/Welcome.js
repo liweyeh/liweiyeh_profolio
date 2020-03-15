@@ -1,7 +1,7 @@
 //Dependencies
-import React, { Fragment } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 //Assets
 import mugshot from '../../assets/mugshot.jpeg';
