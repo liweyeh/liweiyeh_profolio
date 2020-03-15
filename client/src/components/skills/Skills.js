@@ -56,6 +56,7 @@ const Skills = () => {
     { icon: csharpIcon, alt: 'C#' }
   ];
   const contentRef = useRef();
+  const transitionTime = 400;
 
   // State
   const [pos, setPos] = useState();
@@ -102,7 +103,10 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {mainIcons.map((icon, key) => {
             return (
-              <Fade in={isInView(2.5, contentRef.current)} timeout={key * 300}>
+              <Fade
+                in={isInView(2.5, contentRef.current)}
+                timeout={{ enter: key * transitionTime, exit: 0 }}
+              >
                 <img src={icon.icon} alt={icon.alt} className={classes.icon} />
               </Fade>
             );
@@ -119,7 +123,10 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {secondIcons.map((icon, key) => {
             return (
-              <Fade in={isInView(1.1, contentRef.current)} timeout={key * 300}>
+              <Fade
+                in={isInView(1.1, contentRef.current)}
+                timeout={{ enter: key * transitionTime, exit: 0 }}
+              >
                 <img src={icon.icon} alt={icon.alt} className={classes.icon} />
               </Fade>
             );
