@@ -22,7 +22,8 @@ import csharpIcon from '../../assets/c-sharp.svg';
 
 const useStyles = makeStyles(theme => ({
   gridContainer: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    boxShadow: 'inset 0px 6px 6px black'
   },
   title: {
     marginTop: theme.spacing(5)
@@ -54,7 +55,7 @@ const Skills = () => {
     { icon: csharpIcon, alt: 'C#' }
   ];
   return (
-    <Fragment>
+    <div>
       <Grid
         className={classes.gridContainer}
         container
@@ -93,7 +94,7 @@ const Skills = () => {
           })}
         </Grid>
       </Grid>
-    </Fragment>
+    </div>
   );
 };
 

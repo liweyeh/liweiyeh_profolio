@@ -1,7 +1,7 @@
 //Dependencies
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 
 //Assets
 import mugshot from '../../assets/mugshot.jpeg';
@@ -41,7 +41,7 @@ const Welcome = () => {
   const classes = useStyles();
 
   return (
-    <Fragment>
+    <div>
       <Grid
         container
         className={classes.root}
@@ -84,7 +84,7 @@ const Welcome = () => {
           <Typer />
         </Grid>
       </Grid>
-    </Fragment>
+    </div>
   );
 };
 
