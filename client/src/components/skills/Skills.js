@@ -23,7 +23,7 @@ import csharpIcon from '../../assets/c-sharp.svg';
 const useStyles = makeStyles(theme => ({
   gridContainer: {
     backgroundColor: 'white',
-    boxShadow: 'inset 0px 6px 6px black'
+    boxShadow: 'inset 0px 6px 30px black'
   },
   title: {
     marginTop: theme.spacing(5)
@@ -97,7 +97,7 @@ const Skills = () => {
             color='textPrimary'
             variant='h4'
             msgID='skills.skills'
-            defaultMsg='Main Languages and Tools '
+            defaultMsg='Main Languages and Tools'
           />
         </Grid>
         <Grid item sm={10} className={classes.icons}>

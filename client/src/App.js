@@ -17,6 +17,9 @@ const language = navigator.language.split(/[-_]/)[0] === 'ja' ? 'en' : 'en';
 // Sections
 const Welcome = React.lazy(() => import('./components/welcome/Welcome.js'));
 const Skills = React.lazy(() => import('./components/skills/Skills.js'));
+const Portfolio = React.lazy(() =>
+  import('./components/portfolio/Portfolio.js')
+);
 
 function App() {
   return (
@@ -25,6 +28,7 @@ function App() {
         <Suspense fallback={<CircularProgress />}>
           <Welcome />
           <Skills />
+          <Portfolio />
         </Suspense>
       </ThemeProvider>
     </IntlProvider>
