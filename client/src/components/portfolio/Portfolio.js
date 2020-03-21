@@ -5,10 +5,14 @@ import { Grid, Fade } from '@material-ui/core';
 
 // UI
 import Text from '../common/Text';
+import PortfolioItems from './PortfolioItems';
 
 const useStyles = makeStyles(theme => ({
   root: {
     height: '50vh',
+    marginTop: theme.spacing(5)
+  },
+  items: {
     marginTop: theme.spacing(5)
   }
 }));
@@ -25,6 +29,16 @@ const Portfolio = () => {
             msgID='portolios.title'
             defaultMsg='Past Projects'
           />
+        </Grid>
+        <Grid
+          container
+          justify='center'
+          item
+          xs={10}
+          sm={10}
+          className={classes.items}
+        >
+          <PortfolioItems />
         </Grid>
       </Grid>
     </div>
