@@ -4,5 +4,12 @@
   "welcome.school": "Class of 2019, University of Queensland, Master of IT",
   "welcome.occupation": "Frontend developer, React Developer",
   "skills.skills": "Main Languages and Tools",
-  "skills.secondarySkills": "Others"
+  "skills.secondarySkills": "Others",
+  "skills.html": "HTML5",
+  "skills.css": "CSS3",
+  "skills.js": "JavaScript",
+  "skills.react": "React.js",
+  "skills.material": "Material-UI",
+  "skills.git": "Git",
+  "skills.github": "Github"
 }

@@ -1,7 +1,7 @@
 // Dependencies
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Fade } from '@material-ui/core';
+import { Grid, Fade, Popover } from '@material-ui/core';
 
 // UI
 import Text from '../common/Text';
@@ -32,7 +32,20 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center'
   },
   icon: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(1.1)
+  },
+  popover: {
+    pointerEvents: 'none'
+  },
+  paper: {
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.background.default,
+    width: '30vw'
+  },
+  smallicon: {
+    width: '20%',
+    marginRight: theme.spacing(),
+    marginBottom: theme.spacing()
   }
 }));
 
@@ -40,13 +53,18 @@ const Skills = () => {
   // Local constants
   const classes = useStyles();
   const mainIcons = [
-    { icon: htmlIcon, alt: 'HTML5' },
-    { icon: cssIcon, alt: 'CSS3' },
-    { icon: javascriptIcon, alt: 'JS' },
-    { icon: reactIcon, alt: 'React' },
-    { icon: materialIcon, alt: 'Material-UI' },
-    { icon: gitIcon, alt: 'Git' },
-    { icon: githubIcon, alt: 'Github' }
+    {
+      icon: htmlIcon,
+      alt: 'HTML5',
+      msgID: 'skills.html',
+      contentMsg: 'skills.htmlContent'
+    },
+    { icon: cssIcon, alt: 'CSS3', msgID: 'skills.css' },
+    { icon: javascriptIcon, alt: 'JS', msgID: 'skills.js' },
+    { icon: reactIcon, alt: 'React', msgID: 'skills.react' },
+    { icon: materialIcon, alt: 'Material-UI', msgID: 'skills.material' },
+    { icon: gitIcon, alt: 'Git', msgID: 'skills.git' },
+    { icon: githubIcon, alt: 'Github', msgID: 'skills.github' }
   ];
   const secondIcons = [
     { icon: pythonIcon, alt: 'Python' },
@@ -60,6 +78,8 @@ const Skills = () => {
 
   // State
   const [pos, setPos] = useState();
+  const [anchor, setAnchor] = useState(null);
+  const [curIcon, setCurIcon] = useState(null);
 
   // Life Cycle
   useEffect(() => {
@@ -83,6 +103,17 @@ const Skills = () => {
     return false;
   };
 
+  const handlePopoverOpen = (event, icon) => {
+    setCurIcon(icon);
+    setAnchor(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchor(null);
+  };
+
+  const open = Boolean(anchor);
+
   return (
     <div ref={contentRef}>
       <Grid
@@ -103,12 +134,61 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {mainIcons.map((icon, key) => {
             return (
-              <Fade
-                in={isInView(2.5, contentRef.current)}
-                timeout={{ enter: key * transitionTime, exit: 0 }}
-              >
-                <img src={icon.icon} alt={icon.alt} className={classes.icon} />
-              </Fade>
+              <>
+                <Fade
+                  in={isInView(2.5, contentRef.current)}
+                  timeout={{ enter: key * transitionTime, exit: 0 }}
+                >
+                  <img
+                    src={icon.icon}
+                    alt={icon.alt}
+                    className={classes.icon}
+                    onMouseEnter={e => handlePopoverOpen(e, icon)}
+                    onMouseLeave={handlePopoverClose}
+                  />
+                </Fade>
+                <Popover
+                  className={classes.popover}
+                  classes={{
+                    paper: classes.paper
+                  }}
+                  open={open}
+                  anchorEl={anchor}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left'
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left'
+                  }}
+                  disableRestoreFocus
+                >
+                  <Grid container>
+                    <Grid item container direction='row' alignItems='center'>
+                      <img
+                        src={curIcon && curIcon.icon}
+                        alt={curIcon && curIcon.alt}
+                        className={classes.smallicon}
+                      />
+                      <Text
+                        color='secondary'
+                        variant='h5'
+                        msgID={curIcon && curIcon.msgID}
+                        defaultMsg='Other Languages and Tools '
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Text
+                        color='secondary'
+                        variant='h6'
+                        msgID={curIcon && curIcon.contentMsg}
+                        defaultMsg='Other Languages and Tools '
+                      />
+                    </Grid>
+                  </Grid>
+                </Popover>
+              </>
             );
           })}
         </Grid>
