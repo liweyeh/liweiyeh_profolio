@@ -242,7 +242,8 @@ const Skills = () => {
                     vertical: 'top',
                     horizontal: 'left'
                   }}
-                  disableRestoreFocus
+                  disableScrollLock
+                  disablePortal
                 >
                   <Grid container>
                     <Grid item container direction='row' alignItems='center'>
@@ -327,7 +328,8 @@ const Skills = () => {
                     vertical: 'top',
                     horizontal: 'left'
                   }}
-                  disableRestoreFocus
+                  disableScrollLock
+                  disablePortal
                 >
                   <Grid container>
                     <Grid item container direction='row' alignItems='center'>
