@@ -14,7 +14,10 @@ const themeInstance = createMuiTheme({
       main: '#fff'
     },
     text: {
-      primary: 'black'
+      primary: '#000'
+    },
+    badges: {
+      primary: "'#ab0f03'"
     }
   }
 });

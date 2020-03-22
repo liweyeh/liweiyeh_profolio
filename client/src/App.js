@@ -28,7 +28,7 @@ function App() {
         <Suspense fallback={<CircularProgress />}>
           <Welcome />
           <Skills />
-          {/* <Portfolio /> */}
+          <Portfolio />
         </Suspense>
       </ThemeProvider>
     </IntlProvider>

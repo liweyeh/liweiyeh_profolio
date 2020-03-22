@@ -52,5 +52,13 @@
   "skills.csharp": "C#",
   "skills.csharpUsage": "Usage: AR/VR development",
   "skills.csharpExp": "Experience: 1 year",
-  "skills.csharpCommercial": "Commercial Experience: N/A"
+  "skills.csharpCommercial": "Commercial Experience: N/A",
+  "projects.statusBuild": "In Development",
+  "projects.statusFinished": "Finished",
+  "projects.teamSize": "team size of 4",
+  "projects.workType": "commercial work",
+  "projects.floodriskTitle": "Flood Risk",
+  "projects.floodriskContent": "Flood Risk is .....",
+  "projects.floodriskDemo": "Demo Link: ",
+  "projects.floodriskDemoLink": "https://floodriskweb2.z16.web.core.windows.net"
 }

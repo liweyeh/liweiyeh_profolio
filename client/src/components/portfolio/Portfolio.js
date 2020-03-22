@@ -39,6 +39,7 @@ const Portfolio = () => {
           className={classes.items}
         >
           <PortfolioItems />
+          <PortfolioItems />
         </Grid>
       </Grid>
     </div>
