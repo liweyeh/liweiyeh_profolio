@@ -40,11 +40,12 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(2),
     backgroundColor: theme.palette.background.default,
-    width: '30vw'
+    width: '15vw',
+    minWidth: '350px'
   },
   smallicon: {
     width: '20%',
-    marginRight: theme.spacing(),
+    marginRight: theme.spacing(3),
     marginBottom: theme.spacing()
   }
 }));
@@ -57,21 +58,100 @@ const Skills = () => {
       icon: htmlIcon,
       alt: 'HTML5',
       msgID: 'skills.html',
-      contentMsg: 'skills.htmlContent'
+      contentMsgUsage: 'skills.htmlUsage',
+      contentMsgExp: 'skills.htmlExp',
+      contentMsgCommercial: 'skills.htmlCommercial'
     },
-    { icon: cssIcon, alt: 'CSS3', msgID: 'skills.css' },
-    { icon: javascriptIcon, alt: 'JS', msgID: 'skills.js' },
-    { icon: reactIcon, alt: 'React', msgID: 'skills.react' },
-    { icon: materialIcon, alt: 'Material-UI', msgID: 'skills.material' },
-    { icon: gitIcon, alt: 'Git', msgID: 'skills.git' },
-    { icon: githubIcon, alt: 'Github', msgID: 'skills.github' }
+    {
+      icon: cssIcon,
+      alt: 'CSS3',
+      msgID: 'skills.css',
+      contentMsgUsage: 'skills.cssUsage',
+      contentMsgExp: 'skills.cssExp',
+      contentMsgCommercial: 'skills.cssCommercial'
+    },
+    {
+      icon: javascriptIcon,
+      alt: 'JS',
+      msgID: 'skills.js',
+      contentMsgUsage: 'skills.jsUsage',
+      contentMsgExp: 'skills.jsExp',
+      contentMsgCommercial: 'skills.jsCommercial'
+    },
+    {
+      icon: reactIcon,
+      alt: 'React',
+      msgID: 'skills.react',
+      contentMsgUsage: 'skills.reactUsage',
+      contentMsgExp: 'skills.reactExp',
+      contentMsgCommercial: 'skills.reactCommercial'
+    },
+    {
+      icon: materialIcon,
+      alt: 'Material-UI',
+      msgID: 'skills.material',
+      contentMsgUsage: 'skills.materialUsage',
+      contentMsgExp: 'skills.materialExp',
+      contentMsgCommercial: 'skills.materialCommercial'
+    },
+    {
+      icon: gitIcon,
+      alt: 'Git',
+      msgID: 'skills.git',
+      contentMsgUsage: 'skills.gitUsage',
+      contentMsgExp: 'skills.gitExp',
+      contentMsgCommercial: 'skills.gitCommercial'
+    },
+    {
+      icon: githubIcon,
+      alt: 'Github',
+      msgID: 'skills.github',
+      contentMsgUsage: 'skills.githubUsage',
+      contentMsgExp: 'skills.githubExp',
+      contentMsgCommercial: 'skills.githubCommercial'
+    }
   ];
   const secondIcons = [
-    { icon: pythonIcon, alt: 'Python' },
-    { icon: javaIcon, alt: 'Java' },
-    { icon: azureIcon, alt: 'Azure DevOps' },
-    { icon: unityIcon, alt: 'Unity' },
-    { icon: csharpIcon, alt: 'C#' }
+    {
+      icon: pythonIcon,
+      alt: 'Python',
+      msgID: 'skills.python',
+      contentMsgUsage: 'skills.pythonUsage',
+      contentMsgExp: 'skills.pythonExp',
+      contentMsgCommercial: 'skills.pythonCommercial'
+    },
+    {
+      icon: javaIcon,
+      alt: 'Java',
+      msgID: 'skills.java',
+      contentMsgUsage: 'skills.javaUsage',
+      contentMsgExp: 'skills.javaExp',
+      contentMsgCommercial: 'skills.javaCommercial'
+    },
+    {
+      icon: azureIcon,
+      alt: 'Azure DevOps',
+      msgID: 'skills.azure',
+      contentMsgUsage: 'skills.azureUsage',
+      contentMsgExp: 'skills.azureExp',
+      contentMsgCommercial: 'skills.azureCommercial'
+    },
+    {
+      icon: unityIcon,
+      alt: 'Unity',
+      msgID: 'skills.unity',
+      contentMsgUsage: 'skills.unityUsage',
+      contentMsgExp: 'skills.unityExp',
+      contentMsgCommercial: 'skills.unityCommercial'
+    },
+    {
+      icon: csharpIcon,
+      alt: 'C#',
+      msgID: 'skills.csharp',
+      contentMsgUsage: 'skills.csharpUsage',
+      contentMsgExp: 'skills.csharpExp',
+      contentMsgCommercial: 'skills.csharpCommercial'
+    }
   ];
   const contentRef = useRef();
   const transitionTime = 400;
@@ -175,15 +255,31 @@ const Skills = () => {
                         color='secondary'
                         variant='h5'
                         msgID={curIcon && curIcon.msgID}
-                        defaultMsg='Other Languages and Tools '
+                        defaultMsg=''
                       />
                     </Grid>
                     <Grid item>
                       <Text
                         color='secondary'
                         variant='h6'
-                        msgID={curIcon && curIcon.contentMsg}
-                        defaultMsg='Other Languages and Tools '
+                        msgID={curIcon && curIcon.contentMsgUsage}
+                        defaultMsg='Usage: Frontend Development'
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Text
+                        color='secondary'
+                        variant='h6'
+                        msgID={curIcon && curIcon.contentMsgExp}
+                        defaultMsg='Experience: 2 years'
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Text
+                        color='secondary'
+                        variant='h6'
+                        msgID={curIcon && curIcon.contentMsgCommercial}
+                        defaultMsg='Commercial Experience: 1 year'
                       />
                     </Grid>
                   </Grid>
@@ -203,12 +299,77 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {secondIcons.map((icon, key) => {
             return (
-              <Fade
-                in={isInView(1.1, contentRef.current)}
-                timeout={{ enter: key * transitionTime, exit: 0 }}
-              >
-                <img src={icon.icon} alt={icon.alt} className={classes.icon} />
-              </Fade>
+              <>
+                <Fade
+                  in={isInView(1.1, contentRef.current)}
+                  timeout={{ enter: key * transitionTime, exit: 0 }}
+                >
+                  <img
+                    src={icon.icon}
+                    alt={icon.alt}
+                    className={classes.icon}
+                    onMouseEnter={e => handlePopoverOpen(e, icon)}
+                    onMouseLeave={handlePopoverClose}
+                  />
+                </Fade>
+                <Popover
+                  className={classes.popover}
+                  classes={{
+                    paper: classes.paper
+                  }}
+                  open={open}
+                  anchorEl={anchor}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left'
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left'
+                  }}
+                  disableRestoreFocus
+                >
+                  <Grid container>
+                    <Grid item container direction='row' alignItems='center'>
+                      <img
+                        src={curIcon && curIcon.icon}
+                        alt={curIcon && curIcon.alt}
+                        className={classes.smallicon}
+                      />
+                      <Text
+                        color='secondary'
+                        variant='h5'
+                        msgID={curIcon && curIcon.msgID}
+                        defaultMsg=''
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Text
+                        color='secondary'
+                        variant='h6'
+                        msgID={curIcon && curIcon.contentMsgUsage}
+                        defaultMsg='Usage: Frontend Development'
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Text
+                        color='secondary'
+                        variant='h6'
+                        msgID={curIcon && curIcon.contentMsgExp}
+                        defaultMsg='Experience: 2 years'
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Text
+                        color='secondary'
+                        variant='h6'
+                        msgID={curIcon && curIcon.contentMsgCommercial}
+                        defaultMsg=''
+                      />
+                    </Grid>
+                  </Grid>
+                </Popover>
+              </>
             );
           })}
         </Grid>
