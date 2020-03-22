@@ -214,7 +214,7 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {mainIcons.map((icon, key) => {
             return (
-              <>
+              <div style={{ display: 'inline' }} key={icon.key}>
                 <Fade
                   in={isInView(2.5, contentRef.current)}
                   timeout={{ enter: key * transitionTime, exit: 0 }}
@@ -284,7 +284,7 @@ const Skills = () => {
                     </Grid>
                   </Grid>
                 </Popover>
-              </>
+              </div>
             );
           })}
         </Grid>
@@ -299,7 +299,7 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {secondIcons.map((icon, key) => {
             return (
-              <>
+              <div style={{ display: 'inline' }} key={icon.alt}>
                 <Fade
                   in={isInView(1.1, contentRef.current)}
                   timeout={{ enter: key * transitionTime, exit: 0 }}
@@ -369,7 +369,7 @@ const Skills = () => {
                     </Grid>
                   </Grid>
                 </Popover>
-              </>
+              </div>
             );
           })}
         </Grid>
