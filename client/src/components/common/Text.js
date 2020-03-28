@@ -9,8 +9,9 @@ const Text = ({ color, msgID, defaultMsg, variant }) => {
     <Typography
       color={color}
       variant={variant}
-      noWrap
-      style={{ textAlign: 'center' }}
+      style={{
+        textAlign: 'center'
+      }}
     >
       <FormattedMessage id={msgID} defaultMessage={defaultMsg} />
     </Typography>

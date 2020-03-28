@@ -14,6 +14,10 @@ const useStyles = makeStyles(theme => ({
   '@keyframes blinker': {
     from: { opacity: 1 },
     to: { opacity: 0 }
+  },
+  'typography': {
+    textAlign: 'center',
+    padding: theme.spacing(4)
   }
 }));
 
@@ -41,11 +45,7 @@ const Typer = () => {
 
   return (
     <>
-      <Typography
-        color='secondary'
-        variant='h3'
-        style={{ textAlign: 'center' }}
-      >
+      <Typography color='secondary' variant='h3' className={classes.typography}>
         {text}
         <span className={classes.cursor}></span>
       </Typography>
