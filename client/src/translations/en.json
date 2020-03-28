@@ -53,12 +53,21 @@
   "skills.csharpUsage": "Usage: AR/VR development",
   "skills.csharpExp": "Experience: 1 year",
   "skills.csharpCommercial": "Commercial Experience: N/A",
+  "projects.title": "Past & Current Projects",
   "projects.statusBuild": "In Development",
   "projects.statusFinished": "Finished",
   "projects.demoAvalible": "Demo",
   "projects.demoNotAvalible": "Demo N/A",
-  "projects.workTypeCommercial": "commercial work",
+  "projects.workTypeCommercial": "Commercial Work",
+  "projects.workTypeVolunteer": "Volunteer Work",
+  "projects.workTypeSchool": "School Work",
   "projects.floodRiskTeamSize": "team size of 4",
   "projects.floodriskTitle": "Flood Risk",
-  "projects.floodriskContent": "Flood Risk is ....."
+  "projects.floodriskContent": "Flood Risk is a web application for simulating flooding event",
+  "projects.uqjxTeamSize": "team size of 1",
+  "projects.uqjxTitle": "UQJX",
+  "projects.uqjxContent": "This is a homepage of University of Queensland Japan Exchange Society. ",
+  "projects.vrTeamSize": "team size of 1",
+  "projects.vrTitle": "Web Interface in VR",
+  "projects.vrContent": "This is my theis project. It is mainly about creating user interface for browsing web within virtual reality."
 }

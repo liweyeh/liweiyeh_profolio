@@ -1,7 +1,7 @@
 // Dependecies
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Fade } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 // UI
 import Text from '../common/Text';
@@ -9,6 +9,8 @@ import PortfolioItems from './PortfolioItems';
 
 // Assests
 import floodRisk from '../../assets/floodrisk.png';
+import uqjx from '../../assets/uqjx.png';
+import vr from '../../assets/vr.gif';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,7 +34,28 @@ const floodRiskMsg = {
   img: floodRisk
 };
 
-const projects = [floodRiskMsg, floodRiskMsg, floodRiskMsg];
+const uqjxMsg = {
+  title: 'projects.uqjxTitle',
+  status: 'projects.statusBuild',
+  teamSize: 'projects.uqjxTeamSize',
+  workType: 'projects.workTypeVolunteer',
+  content: 'projects.uqjxContent',
+  demo: 'projects.demoAvalible',
+  demolink: 'https://fathomless-depths-86613.herokuapp.com/',
+  img: uqjx
+};
+
+const vrMsg = {
+  title: 'projects.vrTitle',
+  status: 'projects.statusFinished',
+  teamSize: 'projects.vrTeamSize',
+  workType: 'projects.workTypeSchool',
+  content: 'projects.vrContent',
+  demo: 'projects.demoNotAvalible',
+  img: vr
+};
+
+const projects = [floodRiskMsg, uqjxMsg, vrMsg];
 
 const Portfolio = () => {
   const classes = useStyles();
@@ -43,7 +66,7 @@ const Portfolio = () => {
           <Text
             color='secondary'
             variant='h4'
-            msgID='portolios.title'
+            msgID='projects.title'
             defaultMsg='Past Projects'
           />
         </Grid>

@@ -36,13 +36,14 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2)
   },
   image: {
-    width: '100%'
+    width: '100%',
+    boxShadow: '0px 3px 10px'
   },
   item: {
     marginBottom: theme.spacing(2)
   },
   chip: {
-    margin: theme.spacing(1.1)
+    padding: theme.spacing(2)
   },
   buttonBase: {
     width: '10vw',
@@ -65,7 +66,6 @@ const PortfolioItems = ({ config }) => {
   };
 
   const isInView = (offset, ref) => {
-    debugger;
     if (ref) {
       const top = ref.getBoundingClientRect().top;
       const viewport =
@@ -119,6 +119,7 @@ const PortfolioItems = ({ config }) => {
               >
                 <Grid item>
                   <Chip
+                    className={classes.chip}
                     icon={
                       status === 'projects.statusBuild' ? (
                         <Build />
@@ -140,6 +141,7 @@ const PortfolioItems = ({ config }) => {
                 </Grid>
                 <Grid item>
                   <Chip
+                    className={classes.chip}
                     icon={<People />}
                     size='small'
                     color='secondary'
@@ -155,6 +157,7 @@ const PortfolioItems = ({ config }) => {
                 </Grid>
                 <Grid item>
                   <Chip
+                    className={classes.chip}
                     icon={
                       workType === 'projects.workTypeCommercial' ? (
                         <Work />
@@ -198,6 +201,7 @@ const PortfolioItems = ({ config }) => {
                   elevation={10}
                   target='_blank'
                   href={demolink}
+                  disabled={demo === 'projects.demoAvalible' ? false : true}
                   startIcon={
                     demo === 'projects.demoAvalible' ? (
                       <Pageview />
