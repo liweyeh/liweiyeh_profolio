@@ -4,13 +4,21 @@ import { Typography } from '@material-ui/core';
 import { FormattedMessage } from 'react-intl';
 import { PropTypes } from 'prop-types';
 
-const Text = ({ color, msgID, defaultMsg, variant }) => {
+const Text = ({
+  color,
+  msgID,
+  defaultMsg,
+  variant,
+  noWrap = false,
+  textAlign = 'center'
+}) => {
   return (
     <Typography
       color={color}
       variant={variant}
+      noWrap={noWrap}
       style={{
-        textAlign: 'center'
+        textAlign: textAlign
       }}
     >
       <FormattedMessage id={msgID} defaultMessage={defaultMsg} />

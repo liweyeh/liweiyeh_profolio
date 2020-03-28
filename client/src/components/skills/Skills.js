@@ -38,9 +38,9 @@ const useStyles = makeStyles(theme => ({
     pointerEvents: 'none'
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
     backgroundColor: theme.palette.background.default,
-    width: '15vw',
+    width: '25vw',
     minWidth: '300px'
   },
   smallicon: {
@@ -245,7 +245,7 @@ const Skills = () => {
                   disableScrollLock
                   disablePortal
                 >
-                  <Grid container>
+                  <Grid container direction='column'>
                     <Grid item container direction='row' alignItems='center'>
                       <img
                         src={curIcon && curIcon.icon}
@@ -262,7 +262,8 @@ const Skills = () => {
                     <Grid item>
                       <Text
                         color='secondary'
-                        variant='h6'
+                        variant='body1'
+                        textAlign='left'
                         msgID={curIcon && curIcon.contentMsgUsage}
                         defaultMsg='Usage: Frontend Development'
                       />
@@ -270,7 +271,8 @@ const Skills = () => {
                     <Grid item>
                       <Text
                         color='secondary'
-                        variant='h6'
+                        variant='body1'
+                        textAlign='left'
                         msgID={curIcon && curIcon.contentMsgExp}
                         defaultMsg='Experience: 2 years'
                       />
@@ -278,7 +280,8 @@ const Skills = () => {
                     <Grid item>
                       <Text
                         color='secondary'
-                        variant='h6'
+                        variant='body1'
+                        textAlign='left'
                         msgID={curIcon && curIcon.contentMsgCommercial}
                         defaultMsg='Commercial Experience: 1 year'
                       />
@@ -313,64 +316,6 @@ const Skills = () => {
                     onMouseLeave={handlePopoverClose}
                   />
                 </Fade>
-                <Popover
-                  className={classes.popover}
-                  classes={{
-                    paper: classes.paper
-                  }}
-                  open={open}
-                  anchorEl={anchor}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left'
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left'
-                  }}
-                  disableScrollLock
-                  disablePortal
-                >
-                  <Grid container>
-                    <Grid item container direction='row' alignItems='center'>
-                      <img
-                        src={curIcon && curIcon.icon}
-                        alt={curIcon && curIcon.alt}
-                        className={classes.smallicon}
-                      />
-                      <Text
-                        color='secondary'
-                        variant='h5'
-                        msgID={curIcon && curIcon.msgID}
-                        defaultMsg=''
-                      />
-                    </Grid>
-                    <Grid item>
-                      <Text
-                        color='secondary'
-                        variant='h6'
-                        msgID={curIcon && curIcon.contentMsgUsage}
-                        defaultMsg='Usage: Frontend Development'
-                      />
-                    </Grid>
-                    <Grid item>
-                      <Text
-                        color='secondary'
-                        variant='h6'
-                        msgID={curIcon && curIcon.contentMsgExp}
-                        defaultMsg='Experience: 2 years'
-                      />
-                    </Grid>
-                    <Grid item>
-                      <Text
-                        color='secondary'
-                        variant='h6'
-                        msgID={curIcon && curIcon.contentMsgCommercial}
-                        defaultMsg=''
-                      />
-                    </Grid>
-                  </Grid>
-                </Popover>
               </div>
             );
           })}
