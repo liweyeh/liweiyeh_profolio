@@ -1,14 +1,21 @@
 // Dependecies
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Chip, Link } from '@material-ui/core';
-import { Build, People, Work } from '@material-ui/icons';
+import { Grid, Paper, Chip, Button } from '@material-ui/core';
+import {
+  Build,
+  People,
+  Work,
+  DoneAll,
+  Accessibility,
+  Pageview,
+  NotInterested
+} from '@material-ui/icons';
 
 // UI
 import Text from '../common/Text';
 
 // Assests
-import floodRisk from '../../assets/floodrisk.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,8 +23,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5)
   },
   items: {
-    width: '40vw',
-    minWidth: '400px',
+    width: '60vw',
+    maxWidth: '700px',
+    minWidth: '300px',
     backgroundColor: theme.palette.background.default,
     boxSizing: 'border-box',
     padding: theme.spacing(5)
@@ -35,25 +43,38 @@ const useStyles = makeStyles(theme => ({
   },
   chip: {
     margin: theme.spacing(1.1)
+  },
+  buttonBase: {
+    width: '10vw',
+    minWidth: '200px'
   }
 }));
 
-const PortfolioItems = () => {
+const PortfolioItems = ({ config }) => {
   const classes = useStyles();
-
+  const {
+    title,
+    status,
+    teamSize,
+    workType,
+    content,
+    demo,
+    demolink,
+    img
+  } = config;
   return (
     <div className={classes.root}>
       <Grid container justify='center'>
         <Paper elevation={10} className={classes.items}>
           <Grid container direction='column' alignItems='flex-start'>
             <Grid item className={classes.imageContainer}>
-              <img src={floodRisk} alt='floodrisk' className={classes.image} />
+              <img src={img} alt='floodrisk' className={classes.image} />
             </Grid>
             <Grid item className={classes.item}>
               <Text
                 color='secondary'
                 variant='h4'
-                msgID='projects.floodriskTitle'
+                msgID={title}
                 defaultMsg='Other Languages and Tools '
               />
             </Grid>
@@ -67,14 +88,16 @@ const PortfolioItems = () => {
             >
               <Grid item>
                 <Chip
-                  icon={<Build />}
+                  icon={
+                    status === 'projects.statusBuild' ? <Build /> : <DoneAll />
+                  }
                   size='small'
                   color='secondary'
                   label={
                     <Text
                       color='textPrimary'
                       variant='body2'
-                      msgID='projects.statusBuild'
+                      msgID={status}
                       defaultMsg='In Development'
                     />
                   }
@@ -89,23 +112,29 @@ const PortfolioItems = () => {
                     <Text
                       color='textPrimary'
                       variant='body1'
-                      msgID='projects.teamSize'
-                      defaultMsg='In Development'
+                      msgID={teamSize}
+                      defaultMsg='Team size of 4'
                     />
                   }
                 />
               </Grid>
               <Grid item>
                 <Chip
-                  icon={<Work />}
+                  icon={
+                    workType === 'projects.workTypeCommercial' ? (
+                      <Work />
+                    ) : (
+                      <Accessibility />
+                    )
+                  }
                   color='secondary'
                   size='small'
                   label={
                     <Text
                       color='textPrimary'
                       variant='body1'
-                      msgID='projects.workType'
-                      defaultMsg='In Development'
+                      msgID={workType}
+                      defaultMsg='commercial'
                     />
                   }
                 />
@@ -115,7 +144,7 @@ const PortfolioItems = () => {
               <Text
                 color='secondary'
                 variant='body1'
-                msgID='projects.floodriskContent'
+                msgID={content}
                 defaultMsg='Project description '
               />
             </Grid>
@@ -125,27 +154,30 @@ const PortfolioItems = () => {
               className={classes.item}
               direction='row'
               alignItems='center'
+              justify='center'
             >
-              <Text
-                color='secondary'
-                variant='body1'
-                msgID='projects.floodriskDemo'
-                defaultMsg='Demo'
-              />
-              <a
-                style={{
-                  marginLeft: '8px',
-                  textDecoration: 'none'
-                }}
-                href='https://floodriskweb2.z16.web.core.windows.net/'
+              <Button
+                className={classes.buttonBase}
+                color='primary'
+                variant='contained'
+                elevation={10}
+                target='_blank'
+                href={demolink}
+                startIcon={
+                  demo === 'projects.demoAvalible' ? (
+                    <Pageview />
+                  ) : (
+                    <NotInterested />
+                  )
+                }
               >
                 <Text
                   color='secondary'
                   variant='body1'
-                  msgID='projects.floodriskDemoLink'
-                  defaultMsg='Demo Link'
+                  msgID={demo}
+                  defaultMsg='Demo'
                 />
-              </a>
+              </Button>
             </Grid>
           </Grid>
         </Paper>

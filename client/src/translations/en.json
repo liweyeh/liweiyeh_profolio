@@ -55,10 +55,10 @@
   "skills.csharpCommercial": "Commercial Experience: N/A",
   "projects.statusBuild": "In Development",
   "projects.statusFinished": "Finished",
-  "projects.teamSize": "team size of 4",
-  "projects.workType": "commercial work",
+  "projects.demoAvalible": "Demo",
+  "projects.demoNotAvalible": "Demo N/A",
+  "projects.workTypeCommercial": "commercial work",
+  "projects.floodRiskTeamSize": "team size of 4",
   "projects.floodriskTitle": "Flood Risk",
-  "projects.floodriskContent": "Flood Risk is .....",
-  "projects.floodriskDemo": "Demo Link: ",
-  "projects.floodriskDemoLink": "https://floodriskweb2.z16.web.core.windows.net"
+  "projects.floodriskContent": "Flood Risk is ....."
 }

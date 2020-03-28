@@ -7,6 +7,9 @@ import { Grid, Fade } from '@material-ui/core';
 import Text from '../common/Text';
 import PortfolioItems from './PortfolioItems';
 
+// Assests
+import floodRisk from '../../assets/floodrisk.png';
+
 const useStyles = makeStyles(theme => ({
   root: {
     height: '50vh',
@@ -16,6 +19,20 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(5)
   }
 }));
+
+// Portforlios items
+const floodRiskMsg = {
+  title: 'projects.floodriskTitle',
+  status: 'projects.statusBuild',
+  teamSize: 'projects.floodRiskTeamSize',
+  workType: 'projects.workTypeCommercial',
+  content: 'projects.floodriskContent',
+  demo: 'projects.demoAvalible',
+  demolink: 'https://floodriskweb.z16.web.core.windows.net/',
+  img: floodRisk
+};
+
+const projects = [floodRiskMsg, floodRiskMsg, floodRiskMsg];
 
 const Portfolio = () => {
   const classes = useStyles();
@@ -38,8 +55,9 @@ const Portfolio = () => {
           sm={10}
           className={classes.items}
         >
-          <PortfolioItems />
-          <PortfolioItems />
+          {projects.map(project => (
+            <PortfolioItems key={project.title} config={project} />
+          ))}
         </Grid>
       </Grid>
     </div>

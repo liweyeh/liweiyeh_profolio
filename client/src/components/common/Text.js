@@ -6,7 +6,12 @@ import { PropTypes } from 'prop-types';
 
 const Text = ({ color, msgID, defaultMsg, variant }) => {
   return (
-    <Typography color={color} variant={variant} style={{ textAlign: 'center' }}>
+    <Typography
+      color={color}
+      variant={variant}
+      noWrap
+      style={{ textAlign: 'center' }}
+    >
       <FormattedMessage id={msgID} defaultMessage={defaultMsg} />
     </Typography>
   );

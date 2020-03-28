@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     backgroundColor: theme.palette.background.default,
     width: '15vw',
-    minWidth: '350px'
+    minWidth: '300px'
   },
   smallicon: {
     width: '20%',
@@ -214,7 +214,7 @@ const Skills = () => {
         <Grid item sm={10} className={classes.icons}>
           {mainIcons.map((icon, key) => {
             return (
-              <div style={{ display: 'inline' }} key={icon.key}>
+              <div key={icon.alt} style={{ display: 'inline' }}>
                 <Fade
                   in={isInView(2.5, contentRef.current)}
                   timeout={{ enter: key * transitionTime, exit: 0 }}
