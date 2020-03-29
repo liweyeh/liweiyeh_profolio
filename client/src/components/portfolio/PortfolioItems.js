@@ -91,7 +91,7 @@ const PortfolioItems = ({ config }) => {
 
   return (
     <Grow
-      in={isInView(2, contentRef.current)}
+      in={isInView(3, contentRef.current)}
       timeout={{ enter: 1000, exit: 0 }}
     >
       <div className={classes.root} ref={contentRef}>

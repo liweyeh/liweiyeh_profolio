@@ -14,7 +14,6 @@ import vr from '../../assets/vr.gif';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: '50vh',
     marginTop: theme.spacing(5)
   },
   items: {

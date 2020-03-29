@@ -20,6 +20,7 @@ const Skills = React.lazy(() => import('./components/skills/Skills.js'));
 const Portfolio = React.lazy(() =>
   import('./components/portfolio/Portfolio.js')
 );
+const Contact = React.lazy(() => import('./components/contact/Contact.js'));
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Welcome />
           <Skills />
           <Portfolio />
+          <Contact />
         </Suspense>
       </ThemeProvider>
     </IntlProvider>

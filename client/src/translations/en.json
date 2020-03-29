@@ -78,5 +78,7 @@
   "projects.vrTitle": "Web Interface in VR",
   "projects.vrDes": "This is my thesis project. It is mainly about creating user interface for browsing web pages within virtual reality. In addition, UX test was also performed to evaluate the effectiveness of this interface. If you are interested in reading the result of this evaluation, please let me know. I will send a copy of my thesis to you.",
   "projects.vrTech": "C#, Unity Engine, SteamVR, Azure Speech Recognition",
-  "projects.vrRole": "I am the sole developer for this interface."
+  "projects.vrRole": "I am the sole developer for this interface.",
+  "contact.title": "Contact Me",
+  "contact.email": "Contact me via liweiyehdev@gmail.com"
 }
