@@ -61,7 +61,7 @@ const Contact = () => {
           />
         </Grid>
         <Grid item>
-          <div>
+          <div style={{ textAlign: 'center' }}>
             {`Icons made by `}
             <a
               href='https://www.flaticon.com/authors/pixel-perfect'
