@@ -106,7 +106,7 @@ const PortfolioItems = ({ config }) => {
                   color='secondary'
                   variant='h4'
                   msgID={title}
-                  defaultMsg='Other Languages and Tools '
+                  defaultMsg='Project Title '
                 />
               </Grid>
               <Grid
@@ -178,12 +178,58 @@ const PortfolioItems = ({ config }) => {
                   />
                 </Grid>
               </Grid>
+              <Grid item>
+                <Text
+                  color='secondary'
+                  variant='h6'
+                  msgID={'projects.description'}
+                  defaultMsg='Project description:'
+                  emphasis
+                />
+              </Grid>
               <Grid item className={classes.item}>
                 <Text
                   color='secondary'
                   variant='body1'
-                  msgID={content}
+                  msgID={content.description}
                   defaultMsg='Project description '
+                  textAlign='left'
+                />
+              </Grid>
+              <Grid item>
+                <Text
+                  color='secondary'
+                  variant='h6'
+                  msgID={'projects.tech'}
+                  defaultMsg='Tech Stacks'
+                  emphasis
+                />
+              </Grid>
+              <Grid item className={classes.item}>
+                <Text
+                  color='secondary'
+                  variant='body1'
+                  msgID={content.tech}
+                  defaultMsg='Project description '
+                  textAlign='left'
+                />
+              </Grid>
+              <Grid item>
+                <Text
+                  color='secondary'
+                  variant='h6'
+                  msgID={'projects.role'}
+                  defaultMsg='My Role:'
+                  emphasis
+                />
+              </Grid>
+              <Grid item className={classes.item}>
+                <Text
+                  color='secondary'
+                  variant='body1'
+                  msgID={content.role}
+                  defaultMsg='Project description'
+                  textAlign='left'
                 />
               </Grid>
               <Grid
@@ -201,9 +247,9 @@ const PortfolioItems = ({ config }) => {
                   elevation={10}
                   target='_blank'
                   href={demolink}
-                  disabled={demo === 'projects.demoAvalible' ? false : true}
+                  disabled={demo === 'projects.demoAvailable' ? false : true}
                   startIcon={
-                    demo === 'projects.demoAvalible' ? (
+                    demo === 'projects.demoAvailable' ? (
                       <Pageview />
                     ) : (
                       <NotInterested />

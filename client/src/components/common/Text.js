@@ -10,7 +10,8 @@ const Text = ({
   defaultMsg,
   variant,
   noWrap = false,
-  textAlign = 'center'
+  textAlign = 'center',
+  emphasis = false
 }) => {
   return (
     <Typography
@@ -18,7 +19,8 @@ const Text = ({
       variant={variant}
       noWrap={noWrap}
       style={{
-        textAlign: textAlign
+        textAlign: textAlign,
+        textDecoration: emphasis ? 'underline' : 'initial'
       }}
     >
       <FormattedMessage id={msgID} defaultMessage={defaultMsg} />

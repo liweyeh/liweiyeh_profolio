@@ -28,8 +28,12 @@ const floodRiskMsg = {
   status: 'projects.statusBuild',
   teamSize: 'projects.floodRiskTeamSize',
   workType: 'projects.workTypeCommercial',
-  content: 'projects.floodriskContent',
-  demo: 'projects.demoAvalible',
+  content: {
+    description: 'projects.floodriskDes',
+    tech: 'projects.floodriskTech',
+    role: 'projects.floodriskRole'
+  },
+  demo: 'projects.demoAvailable',
   demolink: 'https://floodriskweb.z16.web.core.windows.net/',
   img: floodRisk
 };
@@ -39,8 +43,12 @@ const uqjxMsg = {
   status: 'projects.statusBuild',
   teamSize: 'projects.uqjxTeamSize',
   workType: 'projects.workTypeVolunteer',
-  content: 'projects.uqjxContent',
-  demo: 'projects.demoAvalible',
+  content: {
+    description: 'projects.uqjxDes',
+    tech: 'projects.uqjxTech',
+    role: 'projects.uqjxRole'
+  },
+  demo: 'projects.demoAvailable',
   demolink: 'https://fathomless-depths-86613.herokuapp.com/',
   img: uqjx
 };
@@ -50,8 +58,12 @@ const vrMsg = {
   status: 'projects.statusFinished',
   teamSize: 'projects.vrTeamSize',
   workType: 'projects.workTypeSchool',
-  content: 'projects.vrContent',
-  demo: 'projects.demoNotAvalible',
+  content: {
+    description: 'projects.vrDes',
+    tech: 'projects.vrTech',
+    role: 'projects.vrRole'
+  },
+  demo: 'projects.demoNotAvailable',
   img: vr
 };
 
