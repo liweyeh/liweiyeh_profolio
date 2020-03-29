@@ -30,8 +30,8 @@ const Typer = () => {
   // TODO: Need japapnese translation
   const fullText =
     language === 'en'
-      ? "Welceom to Liwei's portfolio  :) "
-      : "Welceom to Liwei's portfolio  :) ";
+      ? "Welcome to Liwei's portfolio  :) "
+      : "Welcome to Liwei's portfolio  :) ";
 
   useEffect(() => {
     const handleType = curText => {
