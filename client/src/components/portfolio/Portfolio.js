@@ -12,13 +12,13 @@ import floodRisk from '../../assets/floodrisk.png';
 import uqjx from '../../assets/uqjx.png';
 import vr from '../../assets/vr.gif';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
   },
   items: {
-    marginTop: theme.spacing(5)
-  }
+    marginTop: theme.spacing(5),
+  },
 }));
 
 // Portforlios items
@@ -30,11 +30,11 @@ const floodRiskMsg = {
   content: {
     description: 'projects.floodriskDes',
     tech: 'projects.floodriskTech',
-    role: 'projects.floodriskRole'
+    role: 'projects.floodriskRole',
   },
   demo: 'projects.demoAvailable',
   demolink: 'https://floodriskweb.z16.web.core.windows.net/',
-  img: floodRisk
+  img: floodRisk,
 };
 
 const uqjxMsg = {
@@ -45,11 +45,11 @@ const uqjxMsg = {
   content: {
     description: 'projects.uqjxDes',
     tech: 'projects.uqjxTech',
-    role: 'projects.uqjxRole'
+    role: 'projects.uqjxRole',
   },
   demo: 'projects.demoAvailable',
-  demolink: 'https://fathomless-depths-86613.herokuapp.com/',
-  img: uqjx
+  demolink: 'https://uqjx.herokuapp.com/',
+  img: uqjx,
 };
 
 const vrMsg = {
@@ -60,10 +60,10 @@ const vrMsg = {
   content: {
     description: 'projects.vrDes',
     tech: 'projects.vrTech',
-    role: 'projects.vrRole'
+    role: 'projects.vrRole',
   },
   demo: 'projects.demoNotAvailable',
-  img: vr
+  img: vr,
 };
 
 const projects = [floodRiskMsg, uqjxMsg, vrMsg];
@@ -89,7 +89,7 @@ const Portfolio = () => {
           sm={10}
           className={classes.items}
         >
-          {projects.map(project => (
+          {projects.map((project) => (
             <PortfolioItems key={project.title} config={project} />
           ))}
         </Grid>
