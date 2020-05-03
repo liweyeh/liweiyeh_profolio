@@ -9,7 +9,7 @@ import {
   DoneAll,
   Accessibility,
   Pageview,
-  NotInterested
+  NotInterested,
 } from '@material-ui/icons';
 
 // UI
@@ -17,10 +17,10 @@ import Text from '../common/Text';
 
 // Assests
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    marginBottom: theme.spacing(5)
+    marginBottom: theme.spacing(5),
   },
   items: {
     width: '60vw',
@@ -28,27 +28,27 @@ const useStyles = makeStyles(theme => ({
     minWidth: '330px',
     backgroundColor: theme.palette.background.default,
     boxSizing: 'border-box',
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
   },
   imageContainer: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
   },
   image: {
     width: '100%',
-    boxShadow: '0px 3px 10px'
+    boxShadow: '0px 3px 10px',
   },
   item: {
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
   },
   chip: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
   },
   buttonBase: {
     width: '10vw',
-    minWidth: '200px'
-  }
+    minWidth: '200px',
+  },
 }));
 
 const PortfolioItems = ({ config }) => {
@@ -61,7 +61,7 @@ const PortfolioItems = ({ config }) => {
     window.addEventListener('scroll', () => handleScroll(contentRef));
   }, [contentRef, pos]);
 
-  const handleScroll = ref => {
+  const handleScroll = (ref) => {
     if (ref.current) setPos(ref.current.getBoundingClientRect().top);
   };
 
@@ -86,7 +86,7 @@ const PortfolioItems = ({ config }) => {
     content,
     demo,
     demolink,
-    img
+    img,
   } = config;
 
   return (
@@ -196,6 +196,54 @@ const PortfolioItems = ({ config }) => {
                   textAlign='left'
                 />
               </Grid>
+              {content.login && (
+                <React.Fragment>
+                  <Grid item>
+                    <Text
+                      color='secondary'
+                      variant='body1'
+                      msgID={'projects.accounts'}
+                      defaultMsg='Login:  '
+                      textAlign='left'
+                      emphasis
+                    />
+                  </Grid>
+                  <Grid item className={classes.item}>
+                    <div style={{ display: 'flex' }}>
+                      <Text
+                        color='secondary'
+                        variant='body1'
+                        msgID={content.login}
+                        defaultMsg='Login:  '
+                      />
+                      <Text
+                        color='secondary'
+                        variant='body1'
+                        msgID={'null'}
+                        defaultMsg={content.loginDetails.user}
+                      />
+                    </div>
+                  </Grid>
+
+                  <Grid item className={classes.item}>
+                    <div style={{ display: 'flex' }}>
+                      <Text
+                        color='secondary'
+                        variant='body1'
+                        msgID={content.password}
+                        defaultMsg='Password: '
+                      />
+                      <Text
+                        color='secondary'
+                        variant='body1'
+                        msgID={'null'}
+                        defaultMsg={content.loginDetails.password}
+                      />
+                    </div>
+                  </Grid>
+                </React.Fragment>
+              )}
+
               <Grid item>
                 <Text
                   color='secondary'
