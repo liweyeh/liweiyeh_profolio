@@ -31,12 +31,8 @@ const floodRiskMsg = {
     description: 'projects.floodriskDes',
     tech: 'projects.floodriskTech',
     role: 'projects.floodriskRole',
-    login: 'projects.floodriskLogin',
-    password: 'projects.floodriskPassword',
-    loginDetails: { user: 'admin', password: 'webapi' },
   },
-  demo: 'projects.demoAvailable',
-  demolink: 'https://floodriskweb.z16.web.core.windows.net/',
+  demo: 'projects.demoNotAvailable',
   img: floodRisk,
 };
 
