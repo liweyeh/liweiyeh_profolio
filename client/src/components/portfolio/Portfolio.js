@@ -8,7 +8,7 @@ import Text from '../common/Text';
 import PortfolioItems from './PortfolioItems';
 
 // Assests
-import floodRisk from '../../assets/floodrisk.png';
+import waterInsight from '../../assets/water_insight.png';
 import uqjx from '../../assets/uqjx.png';
 import vr from '../../assets/vr.gif';
 
@@ -34,7 +34,7 @@ const WIMsg = {
   },
   demo: 'projects.demoAvailable',
   demolink: 'https://waterinsights.waternsw.com.au/',
-  img: floodRisk,
+  img: waterInsight,
 };
 
 const uqjxMsg = {
