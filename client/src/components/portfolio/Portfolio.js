@@ -22,17 +22,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // Portforlios items
-const floodRiskMsg = {
-  title: 'projects.floodriskTitle',
+const WIMsg = {
+  title: 'projects.WITitle',
   status: 'projects.statusBuild',
-  teamSize: 'projects.floodRiskTeamSize',
+  teamSize: 'projects.WITeamSize',
   workType: 'projects.workTypeCommercial',
   content: {
-    description: 'projects.floodriskDes',
-    tech: 'projects.floodriskTech',
-    role: 'projects.floodriskRole',
+    description: 'projects.WIDes',
+    tech: 'projects.WITech',
+    role: 'projects.WIRole',
   },
-  demo: 'projects.demoNotAvailable',
+  demo: 'projects.demoAvailable',
+  demolink: 'https://waterinsights.waternsw.com.au/',
   img: floodRisk,
 };
 
@@ -65,7 +66,7 @@ const vrMsg = {
   img: vr,
 };
 
-const projects = [floodRiskMsg, uqjxMsg, vrMsg];
+const projects = [WIMsg, uqjxMsg, vrMsg];
 
 const Portfolio = () => {
   const classes = useStyles();
