@@ -60,6 +60,7 @@
     "projects.description": "Project Description",
     "projects.statusBuild": "In Development",
     "projects.statusFinished": "Finished",
+    "projects.statusPaused": "Paused",
     "projects.demoAvailable": "Demo",
     "projects.demoNotAvailable": "Demo N/A",
     "projects.workTypeCommercial": "Commercial Work",

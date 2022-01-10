@@ -39,7 +39,7 @@ const WIMsg = {
 
 const uqjxMsg = {
     title: "projects.uqjxTitle",
-    status: "projects.statusBuild",
+    status: "projects.statusPaused",
     teamSize: "projects.uqjxTeamSize",
     workType: "projects.workTypeVolunteer",
     content: {
